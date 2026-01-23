@@ -10,7 +10,6 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useLanguage, languages } from "@/contexts/LanguageContext";
 import logoo from "../../public/logoo_d.png";
-
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
@@ -19,6 +18,7 @@ const Header = () => {
   const navLinks = [
     { path: "/", label: t("home") },
     { path: "/treatments", label: t("treatments") },
+    { path: "/hospitals", label: t("Hospital") },
     { path: "/how-it-works", label: t("howItWorks") },
     { path: "/about", label: t("about") },
     { path: "/contact", label: t("contact") },

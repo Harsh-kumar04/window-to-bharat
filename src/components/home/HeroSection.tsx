@@ -57,7 +57,7 @@ const HeroSection = () => {
               asChild
               variant="outline"
               size="lg"
-              className="border-white  hover:bg-white/10  px-8"
+              className="border-white  hover:bg-white/60  px-8"
             >
               <Link to="/treatments">{t("treatments")}</Link>
             </Button>
