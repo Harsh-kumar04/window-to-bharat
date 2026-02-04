@@ -69,7 +69,7 @@ const Footer = () => {
                 <span>contact@windowtobharat.com</span>
               </li>
               <li className="flex items-start gap-3 text-sm text-background/70">
-                <MapPin className="h-4 w-4 mt-0.5 text-primary" />
+                <MapPin className="h-8 w-8 mt-0.5 text-primary" />
                 <span>
                   226A, 3rd Floor, Prakash Mohalla, East of Kailash, New Delhi,
                   Delhi 110065, India

@@ -1,6 +1,6 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, ReactNode } from "react";
 
-type Language = 'en' | 'es' | 'ar' | 'ru' | 'fr';
+type Language = "en" | "es" | "ar" | "ru" | "fr";
 
 interface Translations {
   [key: string]: {
@@ -11,326 +11,458 @@ interface Translations {
 const translations: Translations = {
   en: {
     // Navigation
-    home: 'Home',
-    treatments: 'Treatments',
-    howItWorks: 'How It Works',
-    about: 'About',
-    contact: 'Contact',
-    getConsultation: 'Get Free Consultation',
-    
+    home: "Home",
+    treatments: "Treatments",
+    howItWorks: "How It Works",
+    about: "About",
+    contact: "Contact",
+    getConsultation: "Get Free Consultation",
+
     // Hero
-    heroTitle: 'World-Class Medical Care in India',
-    heroSubtitle: 'Access internationally accredited hospitals, renowned specialists, and affordable treatments — all with personalized care coordination.',
-    
+    heroTitle: "World-Class Medical Care in India",
+    heroSubtitle:
+      "Access internationally accredited hospitals, renowned specialists, and affordable treatments — all with personalized care coordination.",
+
     // Trust Points
-    trust1Title: 'JCI Accredited Hospitals',
-    trust1Desc: 'Partner with top-tier hospitals recognized globally for quality and safety.',
-    trust2Title: '15+ Years Experience',
-    trust2Desc: 'Trusted by thousands of international patients worldwide.',
-    trust3Title: 'Up to 70% Cost Savings',
-    trust3Desc: 'Premium healthcare at a fraction of Western prices.',
-    
+    trust1Title: "JCI Accredited Hospitals",
+    trust1Desc:
+      "Partner with top-tier hospitals recognized globally for quality and safety.",
+    trust2Title: "15+ Years Experience",
+    trust2Desc: "Trusted by thousands of international patients worldwide.",
+    trust3Title: "Up to 70% Cost Savings",
+    trust3Desc: "Premium healthcare at a fraction of Western prices.",
+
     // Services
-    servicesTitle: 'Our Medical Specialties',
-    servicesSubtitle: 'Comprehensive care across all major medical disciplines',
-    
+    servicesTitle: "Our Medical Specialties",
+    servicesSubtitle: "Comprehensive care across all major medical disciplines",
+
     // How It Works
-    howItWorksTitle: 'Your Journey to Better Health',
-    howItWorksSubtitle: 'A seamless experience from first contact to complete recovery',
-    step1Title: 'Inquiry',
-    step1Desc: 'Share your medical reports and requirements with our team.',
-    step2Title: 'Consultation',
-    step2Desc: 'Receive expert opinion and personalized treatment plan.',
-    step3Title: 'Travel & Treatment',
-    step3Desc: 'We handle visas, accommodation, and hospital coordination.',
-    step4Title: 'Recovery',
-    step4Desc: 'Post-treatment care and follow-up support.',
-    
+    // howItWorksPageTitle: "Medical Treatment in India – Stepwise Process",
+    // howItWorksPageSubtitle:
+    //   "A structured and transparent healthcare journey with Window to Bharat",
+
+    step1Title: "Submit Your Request",
+    step1Desc:
+      "Share medical reports, test results, and passport copy via email or through our website. Our medical team reviews your case and responds within 24–48 hours.",
+
+    step2Title: "Expert Medical Opinions",
+    step2Desc:
+      "Receive 3–5 expert opinions from leading NABH and JCI accredited hospitals in India, including treatment options, estimated costs, duration, and doctor profiles.",
+
+    step3Title: "Choose the Best Treatment Plan",
+    step3Desc:
+      "Select the hospital and doctor based on your medical needs, budget, and preferences. Our team assists you via calls or chats to clarify every detail.",
+
+    step4Title: "Medical Visa Assistance",
+    step4Desc:
+      "We arrange hospital invitation letters and provide complete support for medical visa applications for the patient and attendant, including embassy or e-Visa guidance.",
+
+    step5Title: "Travel and Arrival Support",
+    step5Desc:
+      "After visa approval, we coordinate airport pickup and assist with accommodation, local SIM card, money exchange, food arrangements, and interpreters.",
+
+    step6Title: "Consultation and Treatment",
+    step6Desc:
+      "Hospital consultations, diagnostic tests, and treatment or surgery begin with continuous support from our care team and language assistance.",
+
+    step7Title: "Discharge and Recovery",
+    step7Desc:
+      "We assist with discharge formalities, medical reports, prescriptions, and recovery stay arrangements. Optional sightseeing can be planned if medically suitable.",
+
+    step8Title: "Post-Treatment Follow-Up",
+    step8Desc:
+      "After returning home, receive online follow-up consultations, prescription support, and continued medical guidance whenever required.",
+
     // Testimonials
-    testimonialsTitle: 'Patient Stories',
-    testimonialsSubtitle: 'Hear from those who trusted us with their care',
-    
+    testimonialsTitle: "Patient Stories",
+    testimonialsSubtitle: "Hear from those who trusted us with their care",
+
     // CTA
-    ctaTitle: 'Ready to Start Your Medical Journey?',
-    ctaSubtitle: 'Get a free consultation and treatment plan within 48 hours.',
-    ctaWhatsApp: 'Chat on WhatsApp',
-    ctaCall: 'Or Call Us Now',
-    
+    ctaTitle: "Ready to Start Your Medical Journey?",
+    ctaSubtitle: "Get a free consultation and treatment plan within 48 hours.",
+    ctaWhatsApp: "Chat on WhatsApp",
+    ctaCall: "Or Call Us Now",
+
     // Treatments Page
-    treatmentsPageTitle: 'Medical Treatments',
-    treatmentsPageSubtitle: 'Explore our comprehensive range of medical procedures',
-    enquireNow: 'Enquire Now',
-    
+    treatmentsPageTitle: "Medical Treatments",
+    treatmentsPageSubtitle:
+      "Explore our comprehensive range of medical procedures",
+    enquireNow: "Enquire Now",
+
     // How It Works Page
-    howItWorksPageTitle: 'How It Works',
-    howItWorksPageSubtitle: 'Your complete medical tourism journey explained',
-    
+    howItWorksPageTitle: "How It Works",
+    howItWorksPageSubtitle: "Your complete medical tourism journey explained",
+
     // About Page
-    aboutTitle: 'About MediCare India',
-    aboutSubtitle: 'Your trusted partner in medical tourism',
-    aboutMission: 'Our Mission',
-    aboutMissionText: 'To make world-class healthcare accessible to patients worldwide by connecting them with India\'s finest medical institutions and specialists.',
-    aboutVision: 'Our Vision',
-    aboutVisionText: 'To be the most trusted name in medical tourism, known for exceptional patient outcomes and personalized care.',
-    aboutWhyUs: 'Why Choose Us',
-    
+    aboutTitle: "About MediCare India",
+    aboutSubtitle: "Your trusted partner in medical tourism",
+    aboutMission: "Our Mission",
+    aboutMissionText:
+      "To make world-class healthcare accessible to patients worldwide by connecting them with India's finest medical institutions and specialists.",
+    aboutVision: "Our Vision",
+    aboutVisionText:
+      "To be the most trusted name in medical tourism, known for exceptional patient outcomes and personalized care.",
+    aboutWhyUs: "Why Choose Us",
+
     // Contact Page
-    contactTitle: 'Get in Touch',
-    contactSubtitle: 'We\'re here to help you every step of the way',
-    contactForm: 'Send us a Message',
-    yourName: 'Your Name',
-    yourEmail: 'Email Address',
-    yourPhone: 'Phone Number',
-    yourMessage: 'Your Message',
-    sendMessage: 'Send Message',
-    orReachUs: 'Or Reach Us Directly',
-    
+    contactTitle: "Get in Touch",
+    contactSubtitle: "We're here to help you every step of the way",
+    contactForm: "Send us a Message",
+    yourName: "Your Name",
+    yourEmail: "Email Address",
+    yourPhone: "Phone Number",
+    yourMessage: "Your Message",
+    sendMessage: "Send Message",
+    orReachUs: "Or Reach Us Directly",
+
     // Footer
-    footerTagline: 'Your trusted partner for medical tourism in India.',
-    quickLinks: 'Quick Links',
-    contactInfo: 'Contact Info',
-    followUs: 'Follow Us',
-    rights: 'All rights reserved.',
+    footerTagline: "Your trusted partner for medical tourism in India.",
+    quickLinks: "Quick Links",
+    contactInfo: "Contact Info",
+    followUs: "Follow Us",
+    rights: "All rights reserved.",
   },
   es: {
-    home: 'Inicio',
-    treatments: 'Tratamientos',
-    howItWorks: 'Cómo Funciona',
-    about: 'Nosotros',
-    contact: 'Contacto',
-    getConsultation: 'Consulta Gratuita',
-    heroTitle: 'Atención Médica de Clase Mundial en India',
-    heroSubtitle: 'Acceda a hospitales acreditados internacionalmente, especialistas reconocidos y tratamientos asequibles.',
-    trust1Title: 'Hospitales Acreditados JCI',
-    trust1Desc: 'Asociados con hospitales de primer nivel reconocidos mundialmente.',
-    trust2Title: '15+ Años de Experiencia',
-    trust2Desc: 'Confianza de miles de pacientes internacionales.',
-    trust3Title: 'Hasta 70% de Ahorro',
-    trust3Desc: 'Atención médica premium a una fracción del costo.',
-    servicesTitle: 'Nuestras Especialidades',
-    servicesSubtitle: 'Atención integral en todas las disciplinas médicas',
-    howItWorksTitle: 'Su Camino a la Salud',
-    howItWorksSubtitle: 'Una experiencia fluida desde el contacto hasta la recuperación',
-    step1Title: 'Consulta',
-    step1Desc: 'Comparta sus informes médicos con nuestro equipo.',
-    step2Title: 'Evaluación',
-    step2Desc: 'Reciba opinión experta y plan de tratamiento.',
-    step3Title: 'Viaje y Tratamiento',
-    step3Desc: 'Manejamos visas, alojamiento y coordinación.',
-    step4Title: 'Recuperación',
-    step4Desc: 'Cuidado post-tratamiento y seguimiento.',
-    testimonialsTitle: 'Historias de Pacientes',
-    testimonialsSubtitle: 'Escuche de quienes confiaron en nosotros',
-    ctaTitle: '¿Listo para Comenzar?',
-    ctaSubtitle: 'Obtenga una consulta gratuita en 48 horas.',
-    ctaWhatsApp: 'Chat en WhatsApp',
-    ctaCall: 'O Llámenos',
-    treatmentsPageTitle: 'Tratamientos Médicos',
-    treatmentsPageSubtitle: 'Explore nuestra gama de procedimientos',
-    enquireNow: 'Consultar',
-    howItWorksPageTitle: 'Cómo Funciona',
-    howItWorksPageSubtitle: 'Su viaje de turismo médico explicado',
-    aboutTitle: 'Sobre MediCare India',
-    aboutSubtitle: 'Su socio de confianza en turismo médico',
-    aboutMission: 'Nuestra Misión',
-    aboutMissionText: 'Hacer accesible la atención médica de clase mundial conectando pacientes con las mejores instituciones de India.',
-    aboutVision: 'Nuestra Visión',
-    aboutVisionText: 'Ser el nombre más confiable en turismo médico.',
-    aboutWhyUs: 'Por Qué Elegirnos',
-    contactTitle: 'Contáctenos',
-    contactSubtitle: 'Estamos aquí para ayudarle',
-    contactForm: 'Envíenos un Mensaje',
-    yourName: 'Su Nombre',
-    yourEmail: 'Correo Electrónico',
-    yourPhone: 'Teléfono',
-    yourMessage: 'Su Mensaje',
-    sendMessage: 'Enviar Mensaje',
-    orReachUs: 'O Contáctenos Directamente',
-    footerTagline: 'Su socio de confianza para turismo médico en India.',
-    quickLinks: 'Enlaces Rápidos',
-    contactInfo: 'Información de Contacto',
-    followUs: 'Síguenos',
-    rights: 'Todos los derechos reservados.',
+    home: "Inicio",
+    treatments: "Tratamientos",
+    howItWorks: "Cómo Funciona",
+    about: "Nosotros",
+    contact: "Contacto",
+    getConsultation: "Consulta Gratuita",
+    heroTitle: "Atención Médica de Clase Mundial en India",
+    heroSubtitle:
+      "Acceda a hospitales acreditados internacionalmente, especialistas reconocidos y tratamientos asequibles.",
+    trust1Title: "Hospitales Acreditados JCI",
+    trust1Desc:
+      "Asociados con hospitales de primer nivel reconocidos mundialmente.",
+    trust2Title: "15+ Años de Experiencia",
+    trust2Desc: "Confianza de miles de pacientes internacionales.",
+    trust3Title: "Hasta 70% de Ahorro",
+    trust3Desc: "Atención médica premium a una fracción del costo.",
+    servicesTitle: "Nuestras Especialidades",
+    servicesSubtitle: "Atención integral en todas las disciplinas médicas",
+    howItWorksTitle: "Su Camino a la Salud",
+    howItWorksSubtitle:
+      "Una experiencia fluida desde el contacto hasta la recuperación",
+    step1Title: "Enviar su Solicitud",
+    step1Desc:
+      "Comparta informes médicos, resultados de pruebas y copia del pasaporte por correo electrónico o a través de nuestro sitio web. Nuestro equipo médico revisa el caso y responde en un plazo de 24–48 horas.",
+
+    step2Title: "Opiniones Médicas Especializadas",
+    step2Desc:
+      "Reciba de 3 a 5 opiniones de hospitales líderes acreditados por NABH y JCI en India, incluyendo opciones de tratamiento, costos estimados, duración y perfiles de médicos.",
+
+    step3Title: "Elegir el Mejor Plan de Tratamiento",
+    step3Desc:
+      "Seleccione el hospital y el médico según sus necesidades médicas, presupuesto y preferencias. Nuestro equipo le asiste por llamadas o chats.",
+
+    step4Title: "Asistencia para Visa Médica",
+    step4Desc:
+      "Gestionamos cartas de invitación hospitalaria y brindamos apoyo completo para la visa médica del paciente y acompañante, incluida orientación para embajada o e-Visa.",
+
+    step5Title: "Viaje y Llegada a India",
+    step5Desc:
+      "Tras la aprobación de la visa, coordinamos la recogida en el aeropuerto y apoyamos con alojamiento, SIM local, cambio de divisas, alimentación e intérpretes.",
+
+    step6Title: "Consulta y Tratamiento",
+    step6Desc:
+      "Comienzan las consultas hospitalarias, pruebas diagnósticas y el tratamiento o cirugía con asistencia continua de nuestro equipo.",
+
+    step7Title: "Alta y Recuperación",
+    step7Desc:
+      "Asistimos con informes finales, recetas, documentos de alta y opciones de estancia de recuperación.",
+
+    step8Title: "Seguimiento Posterior al Tratamiento",
+    step8Desc:
+      "Consultas médicas en línea, apoyo para renovación de recetas y orientación médica continua después de su regreso.",
+    testimonialsTitle: "Historias de Pacientes",
+    testimonialsSubtitle: "Escuche de quienes confiaron en nosotros",
+    ctaTitle: "¿Listo para Comenzar?",
+    ctaSubtitle: "Obtenga una consulta gratuita en 48 horas.",
+    ctaWhatsApp: "Chat en WhatsApp",
+    ctaCall: "O Llámenos",
+    treatmentsPageTitle: "Tratamientos Médicos",
+    treatmentsPageSubtitle: "Explore nuestra gama de procedimientos",
+    enquireNow: "Consultar",
+    howItWorksPageTitle: "Cómo Funciona",
+    howItWorksPageSubtitle: "Su viaje de turismo médico explicado",
+    aboutTitle: "Sobre MediCare India",
+    aboutSubtitle: "Su socio de confianza en turismo médico",
+    aboutMission: "Nuestra Misión",
+    aboutMissionText:
+      "Hacer accesible la atención médica de clase mundial conectando pacientes con las mejores instituciones de India.",
+    aboutVision: "Nuestra Visión",
+    aboutVisionText: "Ser el nombre más confiable en turismo médico.",
+    aboutWhyUs: "Por Qué Elegirnos",
+    contactTitle: "Contáctenos",
+    contactSubtitle: "Estamos aquí para ayudarle",
+    contactForm: "Envíenos un Mensaje",
+    yourName: "Su Nombre",
+    yourEmail: "Correo Electrónico",
+    yourPhone: "Teléfono",
+    yourMessage: "Su Mensaje",
+    sendMessage: "Enviar Mensaje",
+    orReachUs: "O Contáctenos Directamente",
+    footerTagline: "Su socio de confianza para turismo médico en India.",
+    quickLinks: "Enlaces Rápidos",
+    contactInfo: "Información de Contacto",
+    followUs: "Síguenos",
+    rights: "Todos los derechos reservados.",
   },
   ar: {
-    home: 'الرئيسية',
-    treatments: 'العلاجات',
-    howItWorks: 'كيف يعمل',
-    about: 'من نحن',
-    contact: 'اتصل بنا',
-    getConsultation: 'استشارة مجانية',
-    heroTitle: 'رعاية طبية عالمية في الهند',
-    heroSubtitle: 'الوصول إلى مستشفيات معتمدة دولياً وأطباء مشهورين وعلاجات بأسعار معقولة.',
-    trust1Title: 'مستشفيات معتمدة من JCI',
-    trust1Desc: 'شراكة مع أفضل المستشفيات المعترف بها عالمياً.',
-    trust2Title: 'أكثر من 15 عام خبرة',
-    trust2Desc: 'موثوق به من آلاف المرضى الدوليين.',
-    trust3Title: 'توفير حتى 70%',
-    trust3Desc: 'رعاية صحية متميزة بجزء من التكلفة.',
-    servicesTitle: 'تخصصاتنا الطبية',
-    servicesSubtitle: 'رعاية شاملة في جميع التخصصات',
-    howItWorksTitle: 'رحلتك نحو صحة أفضل',
-    howItWorksSubtitle: 'تجربة سلسة من الاتصال الأول حتى التعافي',
-    step1Title: 'الاستفسار',
-    step1Desc: 'شارك تقاريرك الطبية مع فريقنا.',
-    step2Title: 'الاستشارة',
-    step2Desc: 'احصل على رأي الخبراء وخطة العلاج.',
-    step3Title: 'السفر والعلاج',
-    step3Desc: 'نتعامل مع التأشيرات والإقامة والتنسيق.',
-    step4Title: 'التعافي',
-    step4Desc: 'رعاية ما بعد العلاج والمتابعة.',
-    testimonialsTitle: 'قصص المرضى',
-    testimonialsSubtitle: 'اسمع ممن وثقوا بنا',
-    ctaTitle: 'مستعد لبدء رحلتك العلاجية؟',
-    ctaSubtitle: 'احصل على استشارة مجانية خلال 48 ساعة.',
-    ctaWhatsApp: 'تواصل عبر واتساب',
-    ctaCall: 'أو اتصل بنا',
-    treatmentsPageTitle: 'العلاجات الطبية',
-    treatmentsPageSubtitle: 'استكشف مجموعة الإجراءات الطبية',
-    enquireNow: 'استفسر الآن',
-    howItWorksPageTitle: 'كيف يعمل',
-    howItWorksPageSubtitle: 'شرح رحلة السياحة العلاجية',
-    aboutTitle: 'عن MediCare India',
-    aboutSubtitle: 'شريكك الموثوق في السياحة العلاجية',
-    aboutMission: 'مهمتنا',
-    aboutMissionText: 'جعل الرعاية الصحية العالمية متاحة للمرضى من خلال ربطهم بأفضل المؤسسات الطبية في الهند.',
-    aboutVision: 'رؤيتنا',
-    aboutVisionText: 'أن نكون الاسم الأكثر ثقة في السياحة العلاجية.',
-    aboutWhyUs: 'لماذا تختارنا',
-    contactTitle: 'تواصل معنا',
-    contactSubtitle: 'نحن هنا لمساعدتك في كل خطوة',
-    contactForm: 'أرسل لنا رسالة',
-    yourName: 'اسمك',
-    yourEmail: 'البريد الإلكتروني',
-    yourPhone: 'رقم الهاتف',
-    yourMessage: 'رسالتك',
-    sendMessage: 'إرسال الرسالة',
-    orReachUs: 'أو تواصل معنا مباشرة',
-    footerTagline: 'شريكك الموثوق للسياحة العلاجية في الهند.',
-    quickLinks: 'روابط سريعة',
-    contactInfo: 'معلومات الاتصال',
-    followUs: 'تابعنا',
-    rights: 'جميع الحقوق محفوظة.',
+    home: "الرئيسية",
+    treatments: "العلاجات",
+    howItWorks: "كيف يعمل",
+    about: "من نحن",
+    contact: "اتصل بنا",
+    getConsultation: "استشارة مجانية",
+    heroTitle: "رعاية طبية عالمية في الهند",
+    heroSubtitle:
+      "الوصول إلى مستشفيات معتمدة دولياً وأطباء مشهورين وعلاجات بأسعار معقولة.",
+    trust1Title: "مستشفيات معتمدة من JCI",
+    trust1Desc: "شراكة مع أفضل المستشفيات المعترف بها عالمياً.",
+    trust2Title: "أكثر من 15 عام خبرة",
+    trust2Desc: "موثوق به من آلاف المرضى الدوليين.",
+    trust3Title: "توفير حتى 70%",
+    trust3Desc: "رعاية صحية متميزة بجزء من التكلفة.",
+    servicesTitle: "تخصصاتنا الطبية",
+    servicesSubtitle: "رعاية شاملة في جميع التخصصات",
+    howItWorksTitle: "رحلتك نحو صحة أفضل",
+    howItWorksSubtitle: "تجربة سلسة من الاتصال الأول حتى التعافي",
+    step1Title: "تقديم الطلب",
+    step1Desc:
+      "مشاركة التقارير الطبية ونتائج الفحوصات ونسخة من جواز السفر عبر البريد الإلكتروني أو الموقع الإلكتروني. يتم الرد خلال 24–48 ساعة.",
+
+    step2Title: "آراء طبية متخصصة",
+    step2Desc:
+      "الحصول على 3 إلى 5 آراء طبية من مستشفيات رائدة معتمدة من NABH وJCI في الهند، تشمل خيارات العلاج والتكلفة والمدة.",
+
+    step3Title: "اختيار أفضل خطة علاج",
+    step3Desc:
+      "اختيار المستشفى والطبيب بناءً على الحالة الطبية والميزانية. فريقنا متاح عبر المكالمات أو الدردشة.",
+
+    step4Title: "المساعدة في التأشيرة الطبية",
+    step4Desc:
+      "توفير خطاب دعوة من المستشفى ودعم كامل لإجراءات التأشيرة الطبية للمريض والمرافق.",
+
+    step5Title: "السفر والوصول إلى الهند",
+    step5Desc:
+      "بعد الموافقة على التأشيرة، نوفر الاستقبال من المطار والمساعدة في الإقامة والخدمات المحلية.",
+
+    step6Title: "الاستشارة والعلاج",
+    step6Desc:
+      "بدء الاستشارات والفحوصات والعلاج أو الجراحة مع دعم مستمر من فريق الرعاية.",
+
+    step7Title: "الخروج والتعافي",
+    step7Desc: "تقديم تقارير الخروج والوصفات الطبية وترتيبات الإقامة للتعافي.",
+
+    step8Title: "المتابعة بعد العودة",
+    step8Desc: "استشارات طبية عبر الإنترنت ودعم مستمر بعد العودة إلى بلدكم.",
+    testimonialsTitle: "قصص المرضى",
+    testimonialsSubtitle: "اسمع ممن وثقوا بنا",
+    ctaTitle: "مستعد لبدء رحلتك العلاجية؟",
+    ctaSubtitle: "احصل على استشارة مجانية خلال 48 ساعة.",
+    ctaWhatsApp: "تواصل عبر واتساب",
+    ctaCall: "أو اتصل بنا",
+    treatmentsPageTitle: "العلاجات الطبية",
+    treatmentsPageSubtitle: "استكشف مجموعة الإجراءات الطبية",
+    enquireNow: "استفسر الآن",
+    howItWorksPageTitle: "كيف يعمل",
+    howItWorksPageSubtitle: "شرح رحلة السياحة العلاجية",
+    aboutTitle: "عن MediCare India",
+    aboutSubtitle: "شريكك الموثوق في السياحة العلاجية",
+    aboutMission: "مهمتنا",
+    aboutMissionText:
+      "جعل الرعاية الصحية العالمية متاحة للمرضى من خلال ربطهم بأفضل المؤسسات الطبية في الهند.",
+    aboutVision: "رؤيتنا",
+    aboutVisionText: "أن نكون الاسم الأكثر ثقة في السياحة العلاجية.",
+    aboutWhyUs: "لماذا تختارنا",
+    contactTitle: "تواصل معنا",
+    contactSubtitle: "نحن هنا لمساعدتك في كل خطوة",
+    contactForm: "أرسل لنا رسالة",
+    yourName: "اسمك",
+    yourEmail: "البريد الإلكتروني",
+    yourPhone: "رقم الهاتف",
+    yourMessage: "رسالتك",
+    sendMessage: "إرسال الرسالة",
+    orReachUs: "أو تواصل معنا مباشرة",
+    footerTagline: "شريكك الموثوق للسياحة العلاجية في الهند.",
+    quickLinks: "روابط سريعة",
+    contactInfo: "معلومات الاتصال",
+    followUs: "تابعنا",
+    rights: "جميع الحقوق محفوظة.",
   },
   ru: {
-    home: 'Главная',
-    treatments: 'Лечение',
-    howItWorks: 'Как это работает',
-    about: 'О нас',
-    contact: 'Контакты',
-    getConsultation: 'Бесплатная консультация',
-    heroTitle: 'Медицина мирового класса в Индии',
-    heroSubtitle: 'Доступ к аккредитованным больницам, известным специалистам и доступному лечению.',
-    trust1Title: 'Аккредитованные JCI больницы',
-    trust1Desc: 'Партнёрство с лучшими клиниками мира.',
-    trust2Title: 'Более 15 лет опыта',
-    trust2Desc: 'Доверие тысяч международных пациентов.',
-    trust3Title: 'Экономия до 70%',
-    trust3Desc: 'Премиальное здравоохранение по доступным ценам.',
-    servicesTitle: 'Наши специализации',
-    servicesSubtitle: 'Комплексная помощь во всех областях медицины',
-    howItWorksTitle: 'Ваш путь к здоровью',
-    howItWorksSubtitle: 'Безупречный опыт от первого контакта до выздоровления',
-    step1Title: 'Запрос',
-    step1Desc: 'Поделитесь медицинскими документами с нашей командой.',
-    step2Title: 'Консультация',
-    step2Desc: 'Получите экспертное мнение и план лечения.',
-    step3Title: 'Поездка и лечение',
-    step3Desc: 'Мы организуем визы, проживание и координацию.',
-    step4Title: 'Восстановление',
-    step4Desc: 'Послеоперационный уход и поддержка.',
-    testimonialsTitle: 'Истории пациентов',
-    testimonialsSubtitle: 'Отзывы тех, кто доверился нам',
-    ctaTitle: 'Готовы начать лечение?',
-    ctaSubtitle: 'Получите бесплатную консультацию в течение 48 часов.',
-    ctaWhatsApp: 'Написать в WhatsApp',
-    ctaCall: 'Или позвоните нам',
-    treatmentsPageTitle: 'Медицинские процедуры',
-    treatmentsPageSubtitle: 'Изучите наш спектр процедур',
-    enquireNow: 'Узнать больше',
-    howItWorksPageTitle: 'Как это работает',
-    howItWorksPageSubtitle: 'Ваше путешествие за здоровьем',
-    aboutTitle: 'О MediCare India',
-    aboutSubtitle: 'Ваш надёжный партнёр в медицинском туризме',
-    aboutMission: 'Наша миссия',
-    aboutMissionText: 'Сделать здравоохранение мирового класса доступным, соединяя пациентов с лучшими учреждениями Индии.',
-    aboutVision: 'Наше видение',
-    aboutVisionText: 'Быть самым надёжным именем в медицинском туризме.',
-    aboutWhyUs: 'Почему мы',
-    contactTitle: 'Свяжитесь с нами',
-    contactSubtitle: 'Мы здесь, чтобы помочь вам',
-    contactForm: 'Отправьте сообщение',
-    yourName: 'Ваше имя',
-    yourEmail: 'Email',
-    yourPhone: 'Телефон',
-    yourMessage: 'Сообщение',
-    sendMessage: 'Отправить',
-    orReachUs: 'Или свяжитесь напрямую',
-    footerTagline: 'Ваш надёжный партнёр в медицинском туризме в Индии.',
-    quickLinks: 'Быстрые ссылки',
-    contactInfo: 'Контактная информация',
-    followUs: 'Подписывайтесь',
-    rights: 'Все права защищены.',
+    home: "Главная",
+    treatments: "Лечение",
+    howItWorks: "Как это работает",
+    about: "О нас",
+    contact: "Контакты",
+    getConsultation: "Бесплатная консультация",
+    heroTitle: "Медицина мирового класса в Индии",
+    heroSubtitle:
+      "Доступ к аккредитованным больницам, известным специалистам и доступному лечению.",
+    trust1Title: "Аккредитованные JCI больницы",
+    trust1Desc: "Партнёрство с лучшими клиниками мира.",
+    trust2Title: "Более 15 лет опыта",
+    trust2Desc: "Доверие тысяч международных пациентов.",
+    trust3Title: "Экономия до 70%",
+    trust3Desc: "Премиальное здравоохранение по доступным ценам.",
+    servicesTitle: "Наши специализации",
+    servicesSubtitle: "Комплексная помощь во всех областях медицины",
+    howItWorksTitle: "Ваш путь к здоровью",
+    howItWorksSubtitle: "Безупречный опыт от первого контакта до выздоровления",
+    step1Title: "Отправка Запроса",
+    step1Desc:
+      "Отправьте медицинские отчёты, результаты анализов и копию паспорта по электронной почте или через сайт. Ответ в течение 24–48 часов.",
+
+    step2Title: "Экспертные Медицинские Заключения",
+    step2Desc:
+      "Получите 3–5 заключений от ведущих больниц Индии, аккредитованных NABH и JCI, с указанием вариантов лечения и стоимости.",
+
+    step3Title: "Выбор Лучшего Плана Лечения",
+    step3Desc:
+      "Выберите больницу и врача в соответствии с медицинскими потребностями и бюджетом. Консультации по телефону или в чате.",
+
+    step4Title: "Помощь с Медицинской Визой",
+    step4Desc:
+      "Оформление приглашения от больницы и полная поддержка при получении медицинской визы.",
+
+    step5Title: "Путешествие и Прибытие в Индию",
+    step5Desc:
+      "Организация встречи в аэропорту, проживания и локальной поддержки после одобрения визы.",
+
+    step6Title: "Консультация и Лечение",
+    step6Desc:
+      "Начало обследований, консультаций и лечения с постоянной поддержкой координаторов.",
+
+    step7Title: "Выписка и Восстановление",
+    step7Desc:
+      "Помощь с медицинскими отчётами, рецептами и восстановительным пребыванием.",
+
+    step8Title: "Дистанционное Послеоперационное Наблюдение",
+    step8Desc:
+      "Онлайн-консультации и медицинская поддержка после возвращения домой.",
+    testimonialsTitle: "Истории пациентов",
+    testimonialsSubtitle: "Отзывы тех, кто доверился нам",
+    ctaTitle: "Готовы начать лечение?",
+    ctaSubtitle: "Получите бесплатную консультацию в течение 48 часов.",
+    ctaWhatsApp: "Написать в WhatsApp",
+    ctaCall: "Или позвоните нам",
+    treatmentsPageTitle: "Медицинские процедуры",
+    treatmentsPageSubtitle: "Изучите наш спектр процедур",
+    enquireNow: "Узнать больше",
+    howItWorksPageTitle: "Как это работает",
+    howItWorksPageSubtitle: "Ваше путешествие за здоровьем",
+    aboutTitle: "О MediCare India",
+    aboutSubtitle: "Ваш надёжный партнёр в медицинском туризме",
+    aboutMission: "Наша миссия",
+    aboutMissionText:
+      "Сделать здравоохранение мирового класса доступным, соединяя пациентов с лучшими учреждениями Индии.",
+    aboutVision: "Наше видение",
+    aboutVisionText: "Быть самым надёжным именем в медицинском туризме.",
+    aboutWhyUs: "Почему мы",
+    contactTitle: "Свяжитесь с нами",
+    contactSubtitle: "Мы здесь, чтобы помочь вам",
+    contactForm: "Отправьте сообщение",
+    yourName: "Ваше имя",
+    yourEmail: "Email",
+    yourPhone: "Телефон",
+    yourMessage: "Сообщение",
+    sendMessage: "Отправить",
+    orReachUs: "Или свяжитесь напрямую",
+    footerTagline: "Ваш надёжный партнёр в медицинском туризме в Индии.",
+    quickLinks: "Быстрые ссылки",
+    contactInfo: "Контактная информация",
+    followUs: "Подписывайтесь",
+    rights: "Все права защищены.",
   },
   fr: {
-    home: 'Accueil',
-    treatments: 'Traitements',
-    howItWorks: 'Comment ça marche',
-    about: 'À propos',
-    contact: 'Contact',
-    getConsultation: 'Consultation gratuite',
-    heroTitle: 'Soins médicaux de classe mondiale en Inde',
-    heroSubtitle: 'Accédez à des hôpitaux accrédités, des spécialistes renommés et des traitements abordables.',
-    trust1Title: 'Hôpitaux accrédités JCI',
-    trust1Desc: 'Partenariat avec les meilleurs hôpitaux mondiaux.',
-    trust2Title: 'Plus de 15 ans d\'expérience',
-    trust2Desc: 'Confiance de milliers de patients internationaux.',
-    trust3Title: 'Jusqu\'à 70% d\'économies',
-    trust3Desc: 'Soins premium à une fraction du prix.',
-    servicesTitle: 'Nos spécialités médicales',
-    servicesSubtitle: 'Soins complets dans toutes les disciplines',
-    howItWorksTitle: 'Votre parcours vers la santé',
-    howItWorksSubtitle: 'Une expérience fluide du premier contact à la guérison',
-    step1Title: 'Demande',
-    step1Desc: 'Partagez vos rapports médicaux avec notre équipe.',
-    step2Title: 'Consultation',
-    step2Desc: 'Recevez un avis expert et un plan de traitement.',
-    step3Title: 'Voyage et traitement',
-    step3Desc: 'Nous gérons visas, hébergement et coordination.',
-    step4Title: 'Récupération',
-    step4Desc: 'Soins post-traitement et suivi.',
-    testimonialsTitle: 'Témoignages',
-    testimonialsSubtitle: 'Écoutez ceux qui nous ont fait confiance',
-    ctaTitle: 'Prêt à commencer?',
-    ctaSubtitle: 'Obtenez une consultation gratuite sous 48 heures.',
-    ctaWhatsApp: 'Chat WhatsApp',
-    ctaCall: 'Ou appelez-nous',
-    treatmentsPageTitle: 'Traitements médicaux',
-    treatmentsPageSubtitle: 'Explorez notre gamme de procédures',
-    enquireNow: 'Demander',
-    howItWorksPageTitle: 'Comment ça marche',
-    howItWorksPageSubtitle: 'Votre voyage de tourisme médical expliqué',
-    aboutTitle: 'À propos de MediCare India',
-    aboutSubtitle: 'Votre partenaire de confiance en tourisme médical',
-    aboutMission: 'Notre mission',
-    aboutMissionText: 'Rendre les soins de santé de classe mondiale accessibles en connectant les patients aux meilleures institutions indiennes.',
-    aboutVision: 'Notre vision',
-    aboutVisionText: 'Être le nom le plus fiable en tourisme médical.',
-    aboutWhyUs: 'Pourquoi nous choisir',
-    contactTitle: 'Contactez-nous',
-    contactSubtitle: 'Nous sommes là pour vous aider',
-    contactForm: 'Envoyez-nous un message',
-    yourName: 'Votre nom',
-    yourEmail: 'Email',
-    yourPhone: 'Téléphone',
-    yourMessage: 'Votre message',
-    sendMessage: 'Envoyer',
-    orReachUs: 'Ou contactez-nous directement',
-    footerTagline: 'Votre partenaire de confiance pour le tourisme médical en Inde.',
-    quickLinks: 'Liens rapides',
-    contactInfo: 'Coordonnées',
-    followUs: 'Suivez-nous',
-    rights: 'Tous droits réservés.',
+    home: "Accueil",
+    treatments: "Traitements",
+    howItWorks: "Comment ça marche",
+    about: "À propos",
+    contact: "Contact",
+    getConsultation: "Consultation gratuite",
+    heroTitle: "Soins médicaux de classe mondiale en Inde",
+    heroSubtitle:
+      "Accédez à des hôpitaux accrédités, des spécialistes renommés et des traitements abordables.",
+    trust1Title: "Hôpitaux accrédités JCI",
+    trust1Desc: "Partenariat avec les meilleurs hôpitaux mondiaux.",
+    trust2Title: "Plus de 15 ans d'expérience",
+    trust2Desc: "Confiance de milliers de patients internationaux.",
+    trust3Title: "Jusqu'à 70% d'économies",
+    trust3Desc: "Soins premium à une fraction du prix.",
+    servicesTitle: "Nos spécialités médicales",
+    servicesSubtitle: "Soins complets dans toutes les disciplines",
+    howItWorksTitle: "Votre parcours vers la santé",
+    howItWorksSubtitle:
+      "Une expérience fluide du premier contact à la guérison",
+    step1Title: "Soumettre votre Demande",
+    step1Desc:
+      "Partagez les rapports médicaux, résultats d’examens et une copie du passeport par e-mail ou via le site web. Réponse sous 24–48 heures.",
+
+    step2Title: "Avis Médicaux d’Experts",
+    step2Desc:
+      "Recevez 3 à 5 avis d’hôpitaux de premier plan accrédités NABH et JCI en Inde, incluant options de traitement et estimations de coûts.",
+
+    step3Title: "Choisir le Meilleur Plan de Traitement",
+    step3Desc:
+      "Sélectionnez l’hôpital et le médecin selon vos besoins médicaux et votre budget. Assistance par appel ou chat.",
+
+    step4Title: "Assistance pour le Visa Médical",
+    step4Desc:
+      "Organisation de la lettre d’invitation hospitalière et accompagnement complet pour la demande de visa médical.",
+
+    step5Title: "Voyage et Arrivée en Inde",
+    step5Desc:
+      "Après l’approbation du visa, nous organisons l’accueil à l’aéroport et l’assistance locale.",
+
+    step6Title: "Consultation et Traitement",
+    step6Desc:
+      "Début des consultations, examens et traitement ou chirurgie avec un soutien continu.",
+
+    step7Title: "Sortie et Récupération",
+    step7Desc:
+      "Assistance pour les rapports finaux, ordonnances et séjour de récupération.",
+
+    step8Title: "Suivi Médical à Distance",
+    step8Desc:
+      "Consultations en ligne et accompagnement médical continu après votre retour.",
+    testimonialsTitle: "Témoignages",
+    testimonialsSubtitle: "Écoutez ceux qui nous ont fait confiance",
+    ctaTitle: "Prêt à commencer?",
+    ctaSubtitle: "Obtenez une consultation gratuite sous 48 heures.",
+    ctaWhatsApp: "Chat WhatsApp",
+    ctaCall: "Ou appelez-nous",
+    treatmentsPageTitle: "Traitements médicaux",
+    treatmentsPageSubtitle: "Explorez notre gamme de procédures",
+    enquireNow: "Demander",
+    howItWorksPageTitle: "Comment ça marche",
+    howItWorksPageSubtitle: "Votre voyage de tourisme médical expliqué",
+    aboutTitle: "À propos de MediCare India",
+    aboutSubtitle: "Votre partenaire de confiance en tourisme médical",
+    aboutMission: "Notre mission",
+    aboutMissionText:
+      "Rendre les soins de santé de classe mondiale accessibles en connectant les patients aux meilleures institutions indiennes.",
+    aboutVision: "Notre vision",
+    aboutVisionText: "Être le nom le plus fiable en tourisme médical.",
+    aboutWhyUs: "Pourquoi nous choisir",
+    contactTitle: "Contactez-nous",
+    contactSubtitle: "Nous sommes là pour vous aider",
+    contactForm: "Envoyez-nous un message",
+    yourName: "Votre nom",
+    yourEmail: "Email",
+    yourPhone: "Téléphone",
+    yourMessage: "Votre message",
+    sendMessage: "Envoyer",
+    orReachUs: "Ou contactez-nous directement",
+    footerTagline:
+      "Votre partenaire de confiance pour le tourisme médical en Inde.",
+    quickLinks: "Liens rapides",
+    contactInfo: "Coordonnées",
+    followUs: "Suivez-nous",
+    rights: "Tous droits réservés.",
   },
 };
 
@@ -340,13 +472,15 @@ interface LanguageContextType {
   t: (key: string) => string;
 }
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+const LanguageContext = createContext<LanguageContextType | undefined>(
+  undefined,
+);
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [language, setLanguage] = useState<Language>('en');
+  const [language, setLanguage] = useState<Language>("en");
 
   const t = (key: string): string => {
-    return translations[language]?.[key] || translations['en']?.[key] || key;
+    return translations[language]?.[key] || translations["en"]?.[key] || key;
   };
 
   return (
@@ -359,15 +493,15 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
 export const useLanguage = () => {
   const context = useContext(LanguageContext);
   if (!context) {
-    throw new Error('useLanguage must be used within a LanguageProvider');
+    throw new Error("useLanguage must be used within a LanguageProvider");
   }
   return context;
 };
 
 export const languages: { code: Language; name: string; flag: string }[] = [
-  { code: 'en', name: 'English', flag: '🇬🇧' },
-  { code: 'es', name: 'Español', flag: '🇪🇸' },
-  { code: 'ar', name: 'العربية', flag: '🇸🇦' },
-  { code: 'ru', name: 'Русский', flag: '🇷🇺' },
-  { code: 'fr', name: 'Français', flag: '🇫🇷' },
+  { code: "en", name: "English", flag: "🇬🇧" },
+  { code: "es", name: "Español", flag: "🇪🇸" },
+  { code: "ar", name: "العربية", flag: "🇸🇦" },
+  { code: "ru", name: "Русский", flag: "🇷🇺" },
+  { code: "fr", name: "Français", flag: "🇫🇷" },
 ];
