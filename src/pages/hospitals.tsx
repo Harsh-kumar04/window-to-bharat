@@ -9,91 +9,79 @@ const hospitals = [
     location: "Gurgaon, Near Delhi",
     accreditation: "JCI & NABH Accredited",
     specialties: "Cardiac Sciences, Oncology, Transplants",
-    image:
-      "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1200&q=80",
+    image: "../../public/Hospital/1.jpg",
   },
   {
     name: "Fortis Memorial Research Institute (FMRI)",
     location: "Gurgaon, Delhi NCR",
     accreditation: "JCI & NABH Accredited",
     specialties: "Cardiology, Neurosciences, Oncology",
-    image:
-      "https://images.unsplash.com/photo-1576765607924-3f7b8410a787?auto=format&fit=crop&w=1200&q=80",
+    image: "../../public/Hospital/2.webp",
   },
   {
     name: "Max Super Speciality Hospital",
     location: "Delhi NCR",
     accreditation: "NABH Accredited",
     specialties: "Cancer Care, Neurology, Cardiology",
-    image:
-      "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80",
+    image: "../../public/Hospital/3.webp",
   },
   {
     name: "BLK-Max Super Speciality Hospital",
     location: "New Delhi",
     accreditation: "NABH & NABL Accredited",
     specialties: "Bone Marrow Transplant, Oncology",
-    image:
-      "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?auto=format&fit=crop&w=1200&q=80",
+    image: "../../public/Hospital/4.webp",
   },
   {
     name: "Artemis Hospital",
     location: "Gurgaon",
     accreditation: "JCI & NABH Accredited",
     specialties: "Orthopaedics, Cardiology, Neurosurgery",
-    image:
-      "https://images.unsplash.com/photo-1580281657521-6c6a1e89c01b?auto=format&fit=crop&w=1200&q=80",
+    image: "../../public/Hospital/5.webp",
   },
   {
     name: "Indraprastha Apollo Hospital",
     location: "New Delhi",
     accreditation: "JCI Accredited",
     specialties: "Multi-Organ Transplants, Oncology",
-    image:
-      "https://images.unsplash.com/photo-1586773860383-dab5f3bc2c3f?auto=format&fit=crop&w=1200&q=80",
+    image: "../../public/Hospital/6.jpg",
   },
   {
     name: "Manipal Hospital",
     location: "Dwarka, Delhi",
     accreditation: "NABH Accredited",
     specialties: "General Surgery, Cardiology",
-    image:
-      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80",
+    image: "../../public/Hospital/11.webp",
   },
   {
     name: "Nanavati Max Super Speciality Hospital",
     location: "Mumbai",
     accreditation: "NABH Accredited",
     specialties: "Cancer Care, Orthopaedics",
-    image:
-      "https://images.unsplash.com/photo-1586773860373-7f5c2c3d94c3?auto=format&fit=crop&w=1200&q=80",
+    image: "../../public/Hospital/7.webp",
   },
   {
     name: "Yatharth Super Speciality Hospital",
     location: "Greater Noida, Delhi NCR",
     accreditation: "NABH Accredited",
     specialties: "Nephrology, Orthopaedics",
-    image:
-      "https://images.unsplash.com/photo-1580281658629-50f1a8c0b1a4?auto=format&fit=crop&w=1200&q=80",
+    image: "../../public/Hospital/8.webp",
   },
   {
     name: "Accord Superspeciality Hospital",
     location: "Faridabad",
     accreditation: "NABH Accredited",
     specialties: "Cardiac Sciences, Critical Care",
-    image:
-      "https://images.unsplash.com/photo-1576765608535-5fcb1a1c89f3?auto=format&fit=crop&w=1200&q=80",
+    image: "../../public/Hospital/9.webp",
   },
   {
     name: "Metro Heart Institute with Multispeciality",
     location: "Faridabad",
     accreditation: "NABH Accredited",
     specialties: "Cardiology, Cardiac Surgery",
-    image:
-      "https://images.unsplash.com/photo-1580281657931-e9e5b02f7c2b?auto=format&fit=crop&w=1200&q=80",
+    image: "../../public/Hospital/10.jpg",
   },
 ];
-
 
 const Hospitals = () => {
   const { t } = useLanguage();
